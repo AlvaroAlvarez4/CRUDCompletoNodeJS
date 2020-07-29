@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vista User</h1>
+    <p>Listado de Usuarios</p>
+    <% results.forEach(function(user){ %>
+        <p>
+            <%- user.iduser %>
+            <%- user.name %>
+            <%- user.last_name %>
+        </p> 
+        <a href="/users/eliminar/<%- user.iduser %>">Eliminar</a>
+         <a href="/users/perfil/<%- user.iduser %>">Ver Perfil</a>
+      <% }); %>
+        
+      <hr/>
+
+      <form action=" /users/guardar" method ='post'>
+    <div class="date_user">
+        <label for="name">Name</label>
+        <input type="text" name="name">
+    </div>
+    <div class="date_user">
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name">
+    </div>
+    <button type="submit">Save User</button>
+    </form>
+</body>
+</html>

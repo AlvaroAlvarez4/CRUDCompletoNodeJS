@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vista del Perfil del Usuario</h1>
+<p>Nombre:
+    <%- result.name %>
+</p>
+<p>Apellido:
+    <%- result.last_name %>
+
+    <form action="/users/update/<%- result.iduser %>" method="post">
+        <div class="date_user">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="<%- result.name %>">
+        </div>
+        <div class="date_user">
+            <label for="last_name">Last name</label>
+            <input type="text" name="last_name" placeholder="<%- result.last_name %>">
+        </div>
+        <button type="submit">Save User</button>
+    </form>
+</p>
+</body>
+</html>
